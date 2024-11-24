@@ -1,3 +1,4 @@
+
 // Функция для обновления активной ссылки
 function setActiveLink() {
     const links = document.querySelectorAll('#nav-links a'); // Все ссылки в блоке навигации

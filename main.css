@@ -100,12 +100,14 @@ section{
 @media (max-width: 768px) {
     .navigation {
         display: none;
+		margin: 0;
     }
     .menu-toggle {
-        display: block;
+        display: block !important;
         font-size: 30px;
         cursor: pointer;
     }
+
     #nav-links {
         display: none;
         flex-direction: column;
@@ -245,13 +247,13 @@ section{
 }
 
 /* Footer */
-.footer {
+.headerfooter {
     background: linear-gradient(to top, #afdd61 0%, rgba(175, 221, 97, 0) 100%);
     padding: 40px 43px;
     margin-top: 50px;
 }
 
-.footer-links {
+.headerfooter-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -260,13 +262,13 @@ section{
     margin: 0;
 }
 
-.footer-links li {
+.headerfooter-links li {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.footer-links a {
+.headerfooter-links a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -1418,3 +1420,93 @@ textarea#additional-info {
     margin: 10px 0 10px 20px;
 }
 
+/***Mob***/
+@media (max-width: 1024px) {
+    .services-tabs {
+        flex-direction: column;
+    }
+    .offer-blocks {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .headerfooter-links li {
+        font-size: 10pt;
+        margin-bottom: 10px;
+    }
+    .about-content {
+        text-align: center;
+    }
+    .magazine-block {
+        flex-direction: column;
+    }
+    #scrollToTop {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column-reverse; /* Изменяет порядок колонок */
+        align-items: flex-start; /* Выравнивает элементы по началу */
+        gap: 20px; /* Устанавливает расстояние между колонками */
+    }
+
+    .main-header .left-column {
+        width: 100%; /* Занимает всю ширину */
+        padding-left: 0; /* Убирает отступы */
+    }
+
+    .main-header .right-column {
+        width: 100%; /* Занимает всю ширину */
+    }
+
+    .quote {
+        display: flex; /* Включаем Flexbox */
+        flex-direction: column; /* Размещаем элементы вертикально */
+        align-items: flex-start; /* Выравниваем по началу */
+        gap: 10px; /* Добавляем отступы между элементами */
+        position: relative; /* Для управления слоями */
+    }
+
+    .quote-left {
+		transform: rotate(90deg) !important;
+        order: 1; /* Перемещаем в начало */
+        transform: none; /* Убираем поворот */
+        width: 30px; /* Уменьшаем размер кавычек */
+        height: auto; /* Сохраняем пропорции */
+        z-index: 1; /* Устанавливаем над текстом */
+		margin: 0 auto;
+    }
+
+    .quote-text {
+        order: 2; /* Устанавливаем текст после левой кавычки */
+        text-align: left; /* Выравниваем текст по левому краю */
+        z-index: 2; /* Устанавливаем над другими элементами */
+    }
+
+    .quote-text p {
+        font-size: 16pt; /* Уменьшаем размер текста */
+        line-height: 1.4; /* Корректируем межстрочный интервал для читаемости */
+        margin: 0; /* Убираем лишние отступы */
+		text-align: center;
+    }
+
+    .quote-right {
+		transform: rotate(-90deg);
+        order: 3; /* Перемещаем в конец */
+        margin: 0 auto;
+        width: 30px; /* Уменьшаем размер кавычек */
+        height: auto; /* Сохраняем пропорции */
+        z-index: 1; /* Устанавливаем над текстом */
+    }
+}
+
+body {
+    width: 1200px; /* Фиксированная ширина */
+    margin: 0 auto; /* Центрирование на экране */
+}
