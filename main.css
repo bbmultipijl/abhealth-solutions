@@ -98,8 +98,7 @@ section{
 
 /* Мобильная версия */
 @media (max-width: 768px) {
-    .navigation {
-        display: none;
+    .navigation {      
 		margin: 0;
     }
     .menu-toggle {
@@ -117,11 +116,19 @@ section{
         background-color: white;
         border: 1px solid #ccc;
         width: 200px;
+		z-index: 1000;
     }
     #nav-links li {
         text-align: left;
         padding: 10px;
     }
+}
+
+
+.menu-toggle {
+    display: block; /* Показываем бургер-иконку */
+    font-size: 30px;
+    cursor: pointer;
 }
 
 /* На больших экранах скрыть "бургер" */
@@ -1504,9 +1511,4 @@ textarea#additional-info {
         height: auto; /* Сохраняем пропорции */
         z-index: 1; /* Устанавливаем над текстом */
     }
-}
-
-body {
-    width: 1200px; /* Фиксированная ширина */
-    margin: 0 auto; /* Центрирование на экране */
 }
