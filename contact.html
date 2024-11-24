@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | AB HEALTH Solutions</title>
+	
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Preload шрифтов -->
+    <link rel="preload" href="fonts/Florsn18.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Florsn17.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="fonts/NotoSans-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+	
+
+	 
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="img/logo.jpg" alt="AB HEALTH Solutions" class="logo">
+            </div>
+            <nav class="navigation">
+                <div class="menu-toggle" id="menu-toggle">
+                    &#9776; <!-- Иконка "бургер" -->
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="contact.html" class="default-active">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+   
+	
+	<section class="page-header">
+		<div class="container">
+			<div class="breadcrumbs">
+				<a href="index.html">Main</a> » <span class="active">Contact</span>
+			</div>			
+			<h3 class="subheading">Contact form</h3>
+			<h2 class="section-heading">Get in touch with us!</h2>
+			<p class="description">
+				Please provide your details to receive your personalized recommendation for the necessary tests. Our specialists are ready to assist you in making the right choice and supporting you throughout your medical journey.
+			</p>
+		</div>
+	</section>
+
+	<section class="contacts-section">
+		
+		<!-- <form id="contact-form" class="contact-form" action="process_form.php" method="POST"> -->
+		<form id="contact-form" class="contact-form">
+            <!-- Row 1 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" placeholder="Surname">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="E-mail">
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="diagnosis">Initial diagnosis</label>
+                    <input type="text" id="diagnosis" placeholder="Diagnosis">
+                </div>
+                <div class="form-group">
+                    <label for="disease">Disease</label>
+                    <input type="text" id="disease" placeholder="Disease">
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="treatment">Treatment so far</label>
+                    <input type="text" id="treatment" placeholder="Treatment">
+                </div>
+            </div>
+            <!-- Row 4 -->
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="gender">Biological gender</label>
+                        <select id="gender">
+                            <option value="" disabled selected>Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth-year">Year of birth</label>
+                        <!-- <input type="text" id="birth-year" placeholder="DD/MM/YYYY"> -->
+						<input type="date" id="birth-year">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="additional-info">Additional information</label>
+                        <textarea id="additional-info" placeholder="Comment"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 5 -->
+            <div class="form-row">
+                <div class="recaptcha">
+                    <div class="recaptcha-placeholder">Complete CAPTCHA</div>
+					
+                </div>
+                <button type="submit" class="submit-button">SEND</button>
+            </div>
+        </form>
+		
+		<div id="success-message" class="success-message">Form submitted successfully!</div>
+	</section>
+
+	
+	
+
+	
+
+
+	<footer>
+		<!-- Upper Section -->
+		<div class="footer-upper">
+			<div class="container">
+				<div class="location">
+					<img src="img/location-icon.png" alt="Location Icon">
+					<p>EU, UK & Switzerland</p>
+				</div>
+				<div class="location">
+					<img src="img/location-icon.png" alt="Location Icon">
+					<p>USA & Canada</p>
+				</div>
+				<div class="location">
+					<img src="img/location-icon.png" alt="Location Icon">
+					<p>Australia & New Zealand</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Lower Section -->
+		<div class="footer-lower">
+			
+			<div class="footer-column left">
+				<p class="copy">&copy; AB Health Solutions Ltd</p>
+			</div>
+			<div class="footer-column center">
+				<a href="policy.html">Privacy Policy</a>
+				<a href="contact.html">Contact Form</a>
+			</div>
+			<div class="footer-column right">
+				<p>info@abhealth-solutions.com</p>
+			</div>
+		</div>
+	</footer>
+
+
+	<button id="scrollToTop" title="Go to top">&#9650;</button>
+
+    <script src="script.js"></script> <!-- Ссылка на JavaScript -->
+</body>
+</html>

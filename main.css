@@ -1,0 +1,1420 @@
+/* Подключение шрифтов */
+@font-face {
+    font-family: 'Florencesans SC Bold';
+    src: url('fonts/Florsn18.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Florencesans SC Regular';
+    src: url('fonts/Florsn17.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Semibold';
+    src: url('fonts/NotoSans-SemiBold.ttf') format('truetype');
+    font-weight: semibold;
+    font-style: normal;
+}
+
+/* Основные стили */
+body {
+    /* font-family: 'Florencesans SC Regular', sans-serif; */
+    font-family: 'Noto Sans Regular', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+section{
+	padding: 50px 36px 105px 36px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 17px 36px;
+	padding-top: 36px;	
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.inhoud .container{
+	display: block;
+}
+
+.logo-container {
+    width: 119.5px;
+    height: 45.44px;
+    overflow: hidden;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    margin-right: 45px;
+}
+
+#nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-links li {
+    display: inline-block;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 12pt;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+/* Активная ссылка */
+#nav-links a.active {
+    border-bottom: 2px solid #93c564;
+    /* color: #93c564; */
+}
+
+/* Hover эффект */
+#nav-links a:hover {
+    border-bottom: 2px solid #93c564;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 36px;
+        background-color: white;
+        border: 1px solid #ccc;
+        width: 200px;
+    }
+    #nav-links li {
+        text-align: left;
+        padding: 10px;
+    }
+}
+
+/* На больших экранах скрыть "бургер" */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Главная секция */
+.main-header {
+    background-color: #005a5f;
+    background-image: url('img/main-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0 0 0;
+    color: white;
+    position: relative;
+}
+
+/* Колонки */
+.left-column {
+    width: 60%;
+    padding-left: 43px;
+    margin-right: 80px; /* Gap между колонками */
+}
+
+.left-column h1 {
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 28pt;
+}
+
+.left-column p {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    color: #8d8d8d;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.right-column {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Обертка цитаты */
+.quote {
+    display: flex; /* Включаем flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content: flex-start; /* Слева направо, чтобы текст начинался с левой кавычки */
+    gap: 10px; /* Добавляем зазор между элементами */
+    position: relative; /* Для дополнительных модификаций */
+    direction: rtl; /* Для правого выравнивания текста */
+}
+
+/* Левая кавычка */
+.quote-left {
+    height: 100%; /* Растягивается на высоту текста */
+    object-fit: contain; /* Сохраняем пропорции */
+	transform: rotate(180deg); /* Поворот на 180 градусов */
+	margin-top: 100px;/* 28px */
+}
+
+/* Текст цитаты */
+.quote-text {
+    text-align: right; /* Выравниваем текст по правому краю */
+}
+
+.quote-text p {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 22pt;
+    color: #afdd61;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Правая кавычка */
+.quote-right {
+    height: 100%; /* Растягивается на высоту текста */
+    object-fit: contain; /* Сохраняем пропорции */   
+    margin-bottom: 100px;/* 28px */	
+}
+
+/* Кнопки и ссылки */
+.learn-more {
+    background-color: #02a80a;
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 21px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+	text-decoration: none;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.learn-more:hover {
+    background-color: #028a0a;
+    transform: scale(1.05);
+}
+
+.learn-more:active {
+    transform: scale(0.95);
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 52px;
+}
+
+.download-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #02a80a;
+    text-transform: uppercase;
+}
+
+.download-icon {
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to top, #afdd61 0%, rgba(175, 221, 97, 0) 100%);
+    padding: 40px 43px;
+    margin-top: 50px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.tick-icon {
+    width: 16px;
+    height: 16px;
+	margin-right: 42px;
+}
+
+.tick-icon.rotated {
+    transform: rotate(45deg);
+}
+
+.tick-icon.rotated-2 {
+    transform: rotate(90deg);
+}
+/* Секция Services */
+.services {
+    padding: 50px 36px;
+    text-align: center;
+}
+
+.services-title {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 14pt;
+    color: #02a80a;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-heading {
+    font-family: 'Articulate Bold', sans-serif;
+    font-size: 24pt;
+    color: #575757;
+    margin-bottom: 30px;
+	text-align: center;
+	text-align: center;
+	
+}
+.section-heading.dark{
+	color: #fff;
+}
+
+/* Блоки предложений */
+.offer-blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.offer-block {
+    flex: 1;
+    padding: 30px 20px 20px 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.functional-block {
+    background-color: #afdd61;
+	text-decoration: none;
+}
+.functional-block:hover{
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.functional-block .icon {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.functional-block .block-title {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 16pt;
+    color: #ffffff;
+}
+
+.functional-block .block-text {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    color: #8d8d8d;
+}
+
+/* Центральный общий блок */
+.center-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+	
+}
+
+/* Стили для элементов Lab Testing и Lab Results */
+
+.circular-item {
+    display: flex;
+    flex-direction: row; /* Расположение содержимого вертикально */
+    align-items: center;
+    justify-content: center;
+    width: 294.44px;
+    height: 77.592px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 10px;
+    /* box-sizing: border-box; */
+    gap: 20px; /* Расстояние между иконкой и текстом */
+}
+
+
+.circular-item-wrapper {
+    flex: 1; /* Занимает равное пространство */
+    display: flex; /* Снова включаем flexbox для выравнивания вложенных элементов */
+    align-items: center; /* Центруем элементы вертикально */
+    justify-content: flex-start; /* По умолчанию выравниваем влево */
+}
+
+.circular-item-wrapper:last-child {
+    justify-content: flex-end; /* Для второго элемента выравнивание вправо */
+}
+
+
+/* Для Lab Testing */
+.lab-testing {
+    background-image: url('data:image/png;base64, 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');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Для Lab Results */
+.lab-results {
+    background-image: url('data:image/png;base64, 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');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.circular-item p {
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 14pt;
+    color: #00a80f;
+}
+
+.circular-item img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+/* Параграф VALUE FOR YOU */
+.value-for-you {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 22pt;
+    color: #afdd61;
+    margin-top: 60px;
+}
+
+.value-for-you span {
+    color: #0f6a5f;
+}
+
+/* Стили для блока Suggestions for Clinical Trials */
+.suggestions-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 813.5px;
+    padding: 30px;
+    margin: 40px auto 0;
+    background: radial-gradient(circle at 25% 25%, #0d5349, #1b7468 100%);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.suggestions-block img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.suggestions-block h3 {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 18pt;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.suggestions-block p {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    color: #8d8d8d;
+    line-height: 1.5;
+}
+
+/* Секция статистики */
+.statistics-section {
+    padding: 50px 36px; /* Отступы вокруг секции */
+}
+
+.info-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #02a80a; /* Задаем фон зеленого цвета */
+    border-radius: 12px; /* Закругленные края */
+    padding: 20px; /* Внутренние отступы */
+    margin: 0 36px; /* Отступы слева и справа от краев */
+    box-sizing: border-box; /* Учитываем padding и margin */
+}
+
+.column {
+    text-align: center;
+    flex: 1; /* Равное пространство между колонками */
+}
+
+.divider {
+    width: 1px; /* Толщина разделителя */
+    height: 107px; /* Высота разделителя */
+    background-color: #bab7b8; /* Цвет разделителя */
+    margin: 0 10px; /* Отступы между разделителем и колонками */
+}
+
+.text {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 12pt;
+    color: #d6d6d6;
+    margin: 5px 0;
+    line-height: 1.5;
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+}
+
+.genes-text {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+}
+
+.number {
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 36pt;
+    color: #ffffff;
+    margin: 0;
+}
+
+
+/* FAQ Section */
+.faq-section {    
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.faq-title {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 12pt;
+    color: #02a80a;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.faq-description {
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-size: 12pt;
+    color: #575757;
+    max-width: 495px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.infographic {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 0 auto;
+}
+.row{
+	
+}
+.row:nth-child(2n-1){
+	margin-left: 113px;
+	margin-right: 113px;
+}
+.row-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 75px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+}
+
+.row .icon {
+    width: 61px;
+    height: 57px;
+    background-image: url('img/faw-icons_sprite.png');
+    background-repeat: no-repeat;
+    margin: 0 auto 10px;
+}
+/* .row:nth-child(2n) .icon{	
+	align-self: end;
+} */
+.arrow-deco{
+	align-self: end;
+}
+.arrow-deco .icon{
+	margin-top: 14px;
+}
+
+.step h4 {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    color: #02a80a;
+    margin-bottom: 0;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 65px;
+}
+
+.number-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #006164;
+    color: #ffffff;
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 14pt;
+    display: flex;
+	flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.content p {
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-size: 12pt;
+    color: #575757;
+    line-height: 1.5;
+    text-align: left;
+	margin: 0;
+}
+
+.step-number {
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 12pt;
+    color: #006164;
+    margin-right: 5px;
+}
+.line-with-arrows {
+    position: relative;
+    width: calc(100% - 60px); /* Subtract 60px for right margin */
+    height: 5px;
+    background-color: #085b5f;
+}
+.row:nth-child(2n-1) .line-with-arrows{
+    margin-right: 60px;	
+	top: 130px;
+}
+.row:nth-child(2n) .line-with-arrows {
+    margin-left: 60px;	
+	top: 69px;
+}
+.arrow {
+    width: 0;
+    height: 0;
+	border-top: 30px solid transparent; /* Half the height */
+    border-bottom: 30px solid transparent; /* Half the height */
+    border-left: 45px solid #15a84b;
+	position: relative;
+	z-index: 1;	
+}
+/*Health-magazine*/
+.health-magazine {
+    background-color: #006164; /* Section background color */    
+    text-align: center;
+}
+.section-description {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    color: #8d8d8d; /* Gray text */
+    margin-bottom: 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.magazine-blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 63px;
+    margin-left: 43px;
+    margin-right: 43px; /* Left and right spacing for the blocks */
+}
+
+.magazine-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: calc(50% - 10px); /* Adjust width to fit side by side */
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff; /* Default background */
+}
+
+.magazine-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.block-image {
+    width: 50%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.block-content {
+    padding: 20px;
+    text-align: left;
+    width: 50%; /* Content takes 50% */
+}
+
+.block-title {
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 14pt;
+    color: #ffffff; /* Title color */
+    margin-bottom: 10px;
+}
+
+.precision-medicine {
+    background-color: #afdd61; /* Green background */
+}
+
+.clinical-trials {
+    background-color: #02a80a; /* Darker green background */
+}
+
+.block-text {
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-size: 10pt;
+    color: #575757; /* Text color */
+    line-height: 1.6;
+}
+/***/
+.about-section {
+    padding: 50px 36px;
+    background-color: #ffffff;
+}
+
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+.about-content {
+    flex: 1;
+    color: #575757;
+}
+
+.subheading {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 14pt;
+    color: #02a80a;
+    margin-bottom: 10px;
+	text-align: center;
+}
+
+.about-title {
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 20pt;
+    color: #575757;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #575757;
+}
+
+.about-list {
+    list-style-position: inside;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.about-list li {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    display: inline-block;
+    font-family: 'Noto Sans Semibold', sans-serif;
+    font-size: 12pt;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.highlight-green {
+    background-color: #afdd61;
+    color: #ffffff;
+}
+
+.highlight-gray {
+    background-color: #bbbdb8;
+    color: #ffffff;
+}
+
+.highlight-olive {
+    background-color: #abc06f;
+    color: #ffffff;
+}
+
+.about-list p {
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-size: 12pt;
+    color: #575757;
+    margin: 0;
+    margin-top: 5px;
+}
+/* footer */
+
+
+/* Upper Section */
+.footer-upper {
+    background-color: #005a5f;
+    background-image: url('img/location-bg.jpg');
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-upper .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 36px 113px;
+}
+
+.location {
+    text-align: center;
+    color: #ffffff;
+}
+
+.location img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 40px;
+    height: auto;
+}
+
+.location p {
+    font-size: 12pt;
+    color: #ffffff;
+}
+
+/* Lower Section */
+.footer-lower {
+    background-color: #030000;
+    padding: 58px 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	color: #575757;
+	font-family: 'Noto Sans Semibold', sans-serif;
+}
+.footer-lower .copy{
+	font-size: 14pt;
+}
+
+.footer-lower .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100%;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+    color: #575757;
+    font-size: 10pt;
+}
+
+.footer-column.left {
+    text-align: left;
+}
+
+.footer-column.center{
+	text-transform: uppercase;
+}
+.footer-column.center a {
+    color: #575757;
+    text-decoration: none;
+    font-size: 10pt;
+    margin: 0 10px;
+}
+
+.footer-column.center a:hover {
+    text-decoration: underline;
+}
+
+.footer-column.right {
+    text-align: right;
+    color: #575757;
+}
+
+/***/
+html, body {
+    height: 100%; /* Устанавливаем высоту на 100% */
+    margin: 0; /* Убираем отступы */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Делаем body flex-контейнером */
+}
+
+header, section, footer {
+    flex-shrink: 0; /* Запрещаем сжиматься */
+}
+
+section {
+    flex-grow: 1; /* Делаем секцию заполняющей всё доступное пространство */
+}
+
+footer {
+    flex-shrink: 0; /* Футер остается фиксированным */
+}
+
+/*****/
+
+
+#scrollToTop {
+    display: none; /* Скрыта по умолчанию */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Задаем фиксированную ширину */
+    height: 47px; /* Задаем фиксированную высоту */
+    background-color: transparent; /* Прозрачный фон */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Треугольник */
+    background: #02a80a; /* Цвет треугольника */
+    cursor: pointer; /* Указатель при наведении */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Плавный переход */
+    display: flex; /* Flexbox для центрирования */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+    color: #d6d6d6; /* Цвет символа */
+    font-size: 14px; /* Размер символа */
+	border: none;
+}
+
+#scrollToTop:hover {
+    background-color: #028a0a; /* Меняем цвет при наведении */
+    transform: translateY(-5px); /* Небольшое поднятие кнопки вверх */
+    color: #ffffff; /* Меняем цвет символа */
+}
+
+#scrollToTop:active {
+    transform: scale(0.95); /* Небольшое сжатие кнопки при клике */
+}
+
+
+/***Services**/
+/* Specific styles for the Services page header and footer */
+/* Page Header */
+.page-header {
+    background-color: #f9f9f9;
+    padding: 30px 36px;
+}
+
+.page-header .container {
+    display: block;
+}
+
+.page-header .breadcrumbs {
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 10px;
+}
+
+.page-header .breadcrumbs a {
+    color: #02a80a;
+}
+
+.page-header .breadcrumbs .active {
+    color: #575757;
+}
+
+.page-header .subheading {
+    font-family: 'Florencesans SC Regular', sans-serif;
+    font-size: 18pt;
+    color: #02a80a;
+}
+
+.page-header .description {
+    font-family: 'Noto Sans', sans-serif;
+    color: #8d8d8d;
+    line-height: 1.6;
+    max-width: 844px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Page Footer */
+.content-footer {
+	margin-top: 60px;
+    text-align: center;
+    border-top: 2px solid #02a80a;
+}
+
+.content-footer  p {
+    font-family: 'Noto Sans', sans-serif;
+    color: #575757;
+    line-height: 1.6;
+    margin-bottom: 20px;
+	text-align: left;
+}
+
+.content-footer  .get-in-touch {
+    background-color: #02a80a;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Noto Sans Semibold', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.content-footer  .get-in-touch:hover {
+    background-color: #028a0a;
+    transform: scale(1.05);
+}
+
+.content-footer  .get-in-touch:active {
+    transform: scale(0.95);
+}
+
+/* Styling for Tabs and Panels */
+.services-section {
+    margin-top: 30px;
+    padding: 20px;
+    font-family: 'Noto Sans', sans-serif;
+	margin-bottom: 70px;
+}
+
+.services-tabs {
+    display: flex;
+    gap: 30px;
+}
+
+.services-tabs-menu {
+    width: 25%;	
+	
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Элементы идут друг за другом */
+    align-items: flex-start;
+    padding: 20px;
+    flex-shrink: 0;	
+}
+.services-tabs-list {
+    list-style: none;	
+    flex-grow: 0; /* Убираем распределение по доступной высоте */
+    margin: 0;
+    padding: 0;
+	padding-right: 50px;
+    border-right: 2px solid #02a80a;
+}
+
+.services-tab-item {
+    padding: 15px;
+	color: #02a80a;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;	
+    font-weight: bold;
+}
+
+.services-tab-item.active {
+    color: #595958;
+}
+
+.services-tab-content {
+    flex-grow: 1;
+    padding: 20px;
+    border-left: none;
+    background: #fff;
+}
+
+.services-tab-panel {
+    display: none;
+}
+
+.services-tab-panel.active {
+    display: block;
+}
+
+
+.services-inner-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.services-inner-tab {
+    padding: 10px 15px;
+    background: #146a5f;
+	border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 9px;	
+    color: #fff;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.services-inner-tab:hover{
+	border: 1px solid #b9e7bb;
+}
+
+.services-inner-tab.active {    
+    border: 1px solid #b9e7bb;
+	background: none;
+	color: #575757;
+}
+
+.services-inner-content {
+    display: none;
+}
+
+.services-inner-content.active {
+    display: block;
+}
+.services-tab-panel h4{
+	margin-top: 60px;
+}
+
+.toggle-more {
+    background: none;
+    border: none;
+    color: #02a80a;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: underline;
+}
+.list-intro-text{
+	margin-bottom: 0;
+}
+ul.list-with-intro{
+	margin-top: 0;
+}
+.list-with-intro strong{
+	display: block;	
+}
+.services-inner-content .download-link-div {
+    text-align: left; /* Центрует содержимое контейнера */
+}
+.services-inner-content .download-link {
+    display: inline-flex; /* Используем inline-flex для выравнивания и сохранения inline поведения */
+    justify-content: left; /* Центрует контент внутри ссылки */
+}
+.hidden-content {
+  display: none;
+}
+.gene-list p{
+ color: #146a5f;
+ font-family: 'Noto Sans Semibold', sans-serif;
+}
+.gene-list.show .hidden-content {
+  display: inline;
+}
+.gene-list p strong{
+	color: #575757;
+	display: block;
+}
+
+.deco-logo {
+   /* margin-top: auto;  Сдвигает логотип вниз */
+   margin-top: 20px;
+    text-align: center;
+    width: 100%; /* Растягивает по ширине меню */
+	
+}
+.deco-logo img {
+	max-width: 100%; /* Ограничивает ширину изображения */
+    height: auto; /* Сохраняет пропорции */
+    display: block;
+	padding-left: 20px;
+	opacity: 0.3;
+}
+
+/****Contacts***/
+
+.contacts-section {
+    margin: 0 auto;
+    padding: 120px 20px 160px 20px;
+    border-radius: 12px;
+	max-width: 850px;
+}
+.contact-form-section h1 {
+    color: green;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-form-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-form-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form *{
+	box-sizing: border-box;
+	font-family: 'Noto Sans Regular', sans-serif;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-row:last-child {
+    display: flex; /* Используем Flexbox */
+    justify-content: flex-end; /* Выровнять элементы по правому краю */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    gap: 1em; /* Отступ между капчей и кнопкой */
+}
+.form-group {
+    flex: 1;
+    min-width: 200px;
+	position: relative;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #11a54a;
+    border-radius: 12px;
+    font-size: 12px;
+    outline: none;
+    background-color: #fff;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+input::placeholder, textarea::placeholder, select {
+    color: #adadad;
+    font-size: 9pt;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 15px;
+}
+/* Высота текстового поля равна высоте двух инпутов с их лейблами */
+textarea#additional-info {
+    height: calc(2 * (40px + 20px) + 3px); /* 40px - input, 20px - label, 3px - border */
+    min-height: calc(2 * (40px + 20px) + 3px);
+    resize: vertical; /* Позволяем изменять вручную */
+}
+.form-column .form-group {
+	flex: 0;
+}
+.recaptcha{
+	position: relative;
+}
+.recaptcha-placeholder {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-right: 15px;
+	padding: 10px 20px;
+	
+	background: #afdd61;
+	border-radius: 12px;
+}
+
+
+.recaptcha-placeholder.checked {
+    border-color: #11a54a;
+	background: transparent;
+    font-weight: bold;
+}
+
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #11a54a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 150px;
+}
+
+.submit-button:hover {
+    background-color: #0d8e3c;
+}
+
+
+.success-message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+	font-family: 'Noto Sans Semibold', sans-serif;
+	text-align: center;
+	
+}	
+.error {
+    position: absolute;
+	white-space: nowrap; /* Запрещаем автоматические переносы строк */
+    top: 100%; /* Сообщение будет находиться под полем */
+    left: 0;
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 1px; /* Небольшой отступ */
+    z-index: 10; /* Чтобы сообщение находилось поверх остальных элементов */
+}
+
+/* Стили для секции Privacy Policy */
+.privacy-policy-section {
+    padding: 50px 20px; /* Отступы для секции */
+    max-width: 1200px; /* Ограничение ширины */
+    margin: 0 auto; /* Центрирование секции */
+    font-family: 'Noto Sans Regular', sans-serif;
+    line-height: 1.6;
+}
+
+/* Стили для заголовков */
+.privacy-policy-section h4 {    
+    
+}
+
+.privacy-policy-section .section-heading {
+    font-family: 'Florencesans SC Bold', sans-serif;
+    font-size: 24pt;
+    color: #575757;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.privacy-policy-section .description {
+    font-family: 'Noto Sans Regular', sans-serif;
+    font-size: 14px;
+    color: #8d8d8d;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+/* Стили для списка с квадратными маркерами */
+.privacy-list {
+    list-style-type: square; /* Квадратные маркеры */
+    list-style-position: inside;
+    padding-left: 0; 
+    margin-bottom: 20px;
+}
+
+.privacy-list li {
+    margin-bottom: 10px; /* Расстояние между пунктами */
+    color: #575757; /* Цвет текста в списке */
+    text-align: justify;
+}
+.privacy-list li::marker {
+    color: #02a80a; /* Зеленый цвет квадратиков */
+	font-size: 1.5em;
+}
+
+/* Стили для параграфов */
+.privacy-policy-section p {    
+    color: #575757;
+    text-align: justify; /* Выравнивание текста по ширине */
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Стили для изображений */
+.privacy-policy-section img {
+    max-width: 40%;
+}
+
+.privacy-policy-section img:nth-of-type(odd) {
+    float: left; /* Обтекание изображения слева */
+    margin: 10px 20px 10px 0;
+}
+
+.privacy-policy-section img:nth-of-type(even) {
+    float: right; /* Обтекание изображения справа */
+    margin: 10px 0 10px 20px;
+}
+
