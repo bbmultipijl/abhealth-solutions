@@ -1281,6 +1281,11 @@ ul.list-with-intro{
     border-radius: 0.75em;
 	max-width: 850px;
 }
+@media (max-width: 768px) {
+	.contacts-section {
+		padding: 3.25em 1.25em;
+	}	
+}
 .contact-form-section h1 {
     color: green;
     font-size: 1.5em;
@@ -1382,7 +1387,6 @@ textarea#additional-info {
     font-size: 0.875em;
     color: #333;
     text-align: center;
-    margin-right: 15px;
 	padding: 10px 1.25em;
 	
 	background: #afdd61;
@@ -1408,6 +1412,7 @@ textarea#additional-info {
     font-weight: bold;
     width: 100%;
     max-width: 150px;
+	margin-left: 15px;
 }
 
 .submit-button:hover {
