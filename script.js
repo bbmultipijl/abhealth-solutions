@@ -1,3 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    // Обработчик для клика по бургеру
+    menuToggle.addEventListener('click', () => {
+        if (navLinks.style.display === 'flex') {
+            navLinks.style.display = 'none';
+        } else {
+            navLinks.style.display = 'flex';
+        }
+    });
+
+    // Обработчик изменения размера окна
+    window.addEventListener('resize', () => {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth > 768) {
+            // Для больших экранов восстанавливаем меню
+            navLinks.style.display = 'flex';
+        } else {
+            // Для маленьких экранов скрываем меню
+            navLinks.style.display = 'none';
+        }
+    });
+
+    // Инициализация при загрузке страницы
+    const initialScreenWidth = window.innerWidth;
+    if (initialScreenWidth > 768) {
+        navLinks.style.display = 'flex';
+    } else {
+        navLinks.style.display = 'none';
+    }
+});
 
 // Функция для обновления активной ссылки
 function setActiveLink() {
@@ -226,68 +260,76 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Обработчик формы
-document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault(); // Отключаем стандартное поведение формы
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Отключаем стандартное поведение формы
 
-    // Убираем предыдущие сообщения об ошибках
-    resetErrors();
+            // Убираем предыдущие сообщения об ошибках
+            resetErrors();
 
-    // Проверяем поля формы
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const birthYear = document.getElementById('birth-year').value;
-    const gender = document.getElementById('gender').value;
-    const additionalInfo = document.getElementById('additional-info').value.trim();
-    const isCaptchaChecked = document.querySelector('.recaptcha-placeholder').classList.contains('checked');
+            // Проверяем поля формы
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const birthYear = document.getElementById('birth-year').value;
+            const gender = document.getElementById('gender').value;
+            const additionalInfo = document.getElementById('additional-info').value.trim();
+            const isCaptchaChecked = document.querySelector('.recaptcha-placeholder').classList.contains('checked');
 
-    let isValid = true;
+            let isValid = true;
 
-    // Проверка имени
-    if (!/^[a-zA-Z]+$/.test(name)) {
-        setError('name', 'Please enter a valid name (only Latin letters).');
-        isValid = false;
-    }
+            // Проверка имени
+            if (!/^[a-zA-Z]+$/.test(name)) {
+                setError('name', 'Please enter a valid name (only Latin letters).');
+                isValid = false;
+            }
 
-    // Проверка e-mail
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        setError('email', 'Please enter a valid email address.');
-        isValid = false;
-    }
+            // Проверка e-mail
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setError('email', 'Please enter a valid email address.');
+                isValid = false;
+            }
 
-    // Проверка года рождения
-    if (!birthYear) {
-        setError('birth-year', 'Please select a valid year of birth.');
-        isValid = false;
-    }
+            // Проверка года рождения
+            if (!birthYear) {
+                setError('birth-year', 'Please select a valid year of birth.');
+                isValid = false;
+            }
 
-    // Проверка пола
-    if (!gender) {
-        setError('gender', 'Please select your biological gender.');
-        isValid = false;
-    }
+            // Проверка пола
+            if (!gender) {
+                setError('gender', 'Please select your biological gender.');
+                isValid = false;
+            }
 
-    // Проверка CAPTCHA
-    if (!isCaptchaChecked) {
-        setError('recaptcha-placeholder', 'Please complete the CAPTCHA.');
-        isValid = false;
-    }
+            // Проверка CAPTCHA
+            if (!isCaptchaChecked) {
+                setError('recaptcha-placeholder', 'Please complete the CAPTCHA.');
+                isValid = false;
+            }
 
-    if (isValid) {
-        // Показываем сообщение об успехе
-        showSuccessMessage('Form submitted successfully!');
+            if (isValid) {
+                // Показываем сообщение об успехе
+                showSuccessMessage('Form submitted successfully!');
 
-        // Сбрасываем форму
-        document.getElementById('contact-form').reset();
+                // Сбрасываем форму
+                contactForm.reset();
 
-        // Сбрасываем капчу
-        const recaptchaPlaceholder = document.querySelector('.recaptcha-placeholder');
-        recaptchaPlaceholder.classList.remove('checked');
-        recaptchaPlaceholder.textContent = 'Complete CAPTCHA';
-        recaptchaPlaceholder.style.color = '';
-        recaptchaPlaceholder.style.borderColor = '#afdd61';
+                // Сбрасываем капчу
+                const recaptchaPlaceholder = document.querySelector('.recaptcha-placeholder');
+                recaptchaPlaceholder.classList.remove('checked');
+                recaptchaPlaceholder.textContent = 'Complete CAPTCHA';
+                recaptchaPlaceholder.style.color = '';
+                recaptchaPlaceholder.style.borderColor = '#afdd61';
 
-        // Сбрасываем ошибки
-        resetErrors();
+                // Сбрасываем ошибки
+                resetErrors();
+            }
+        });
+    } else {
+        console.log('Форма не найдена на этой странице.');
     }
 });
 
@@ -352,3 +394,7 @@ document.querySelector('.recaptcha-placeholder').addEventListener('click', funct
         this.style.borderColor = '#afdd61'; // Возвращаем исходный стиль
     }
 });
+
+
+
+
